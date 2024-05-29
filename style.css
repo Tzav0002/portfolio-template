@@ -21,17 +21,19 @@
   --text-small: 1.125rem;
 
   --gradient-brand: radial-gradient(
-      at 60% 31%,
-      rgb(255, 131, 139) 0px,
-      transparent 50%
-    ),
-    radial-gradient(at 48% 98%, rgba(0, 255, 166, 0.707) 0px, transparent 50%),
-    radial-gradient(at 84% 67%, rgb(255, 129, 125) 0px, transparent 50%),
-    radial-gradient(at 16% 47%, rgb(255, 90, 112) 0px, transparent 50%),
-    radial-gradient(at 73% 11%, rgb(115, 255, 225) 0px, transparent 50%),
-    radial-gradient(at 49% 37%, rgba(255, 249, 89, 0.695) 0px, transparent 50%),
-    radial-gradient(at 70% 21%, rgba(58, 255, 186, 0.715) 0px, transparent 50%);
-  --easing: cubic-bezier(0.86, 0, 0.07, 1);
+    at 50% 25%,
+    rgb(255, 165, 0) 0px,
+    transparent 50%
+  ),
+  radial-gradient(at 45% 75%, rgba(128, 0, 128, 0.707) 0px, transparent 50%),
+  radial-gradient(at 75% 50%, rgb(255, 69, 0) 0px, transparent 50%),
+  radial-gradient(at 25% 60%, rgb(238, 130, 238) 0px, transparent 50%),
+  radial-gradient(at 80% 20%, rgb(255, 165, 0) 0px, transparent 50%),
+  radial-gradient(at 55% 35%, rgba(186, 85, 211, 0.695) 0px, transparent 50%),
+  radial-gradient(at 65% 30%, rgba(255, 165, 0, 0.715) 0px, transparent 50%);
+--easing: cubic-bezier(0.86, 0, 0.07, 1);
+
+
 
   --site-max-width: 1280px;
   --gutter-nano: 0.5rem;
@@ -105,6 +107,7 @@ body {
   text-rendering: optimizeLegibility;
   overflow-x: hidden;
 }
+
 
 /* Improve media defaults */
 
@@ -381,6 +384,10 @@ main {
   transform: translateY(calc(-1 * var(--radius)));
 }
 
+main ol{
+  visibility: hidden;
+}
+
 @media (max-width: 1185px) {
   :root {
     --radius: 45px;
@@ -428,7 +435,7 @@ main {
   width: 100%;
   background-color: #ff5e99;
   background-image: var(--gradient-brand);
-  transition: 450ms var(--easing);
+  transition: 200ms var(--easing);
   z-index: 3;
 }
 
@@ -1123,6 +1130,11 @@ body.light .signatures {
   border: none;
 }
 
+.submit-btn{
+  display: block;
+  margin-inline-start: auto;
+}
+
 /* --------------------------------- */
 /* ----- Footer -----*/
 /* --------------------------------- */
@@ -1253,3 +1265,16 @@ input:checked {
   --thumb-position: 100%;
   background-color: var(--track-active);
 }
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
